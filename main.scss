@@ -1,0 +1,289 @@
+// color
+$bgColorLight: #f4f4f4;
+$ColorLight: #ffffff;
+$ColorLightNotActive: #a5a5a5;
+
+$bgColorDark: #222222;
+$ColorDark: #000000;
+$ColorDarkNotActive: #747474;
+
+html {
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $ColorLightNotActive;
+    border-radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #757575;
+  }
+
+  /* for Firefox */
+  html {
+    scrollbar-color: #3d4a59;
+  }
+
+  /* for Firefox */
+  html {
+    scrollbar-color: #9e4673 #3d4a59;
+  }
+  body {
+    #go-to-top {
+      display: none;
+      color: white;
+      bottom: 15px !important;
+    }
+    
+    // alert
+    #alert-con {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: 999999;
+    }
+    // add post BTN
+    #add-post {
+      svg {
+        cursor: pointer;
+      }
+    }
+    // header
+    header {
+      box-shadow: #9c9c9c 0px -1px 8px 0px;
+      // user-data
+      nav {
+        a {
+          cursor: pointer;
+        }
+      }
+      #user-data {
+        img {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+    main {
+      section {
+        article {
+          .card-img-and-body {
+            cursor: pointer;
+          }
+          .card-header {
+            img {
+              width: 40px;
+              height: 40px;
+              margin: 0;
+            }
+          }
+          .comments {
+            max-height: 200px;
+            overflow-y: auto;
+            .write-comment {
+              textarea {
+                resize: none;
+                height: 60px;
+              }
+            }
+
+            .name-and-img {
+              width: fit-content;
+              cursor: pointer;
+              img {
+                width: 30px;
+                height: 30px;
+                margin: 0;
+              }
+            }
+          }
+          &.loading {
+            animation: loading 1s infinite linear;
+            @keyframes loading {
+              0%,
+              100% {
+                opacity: 0.2;
+              }
+              50% {
+                opacity: 0.4;
+              }
+            }
+          }
+          .post-details {
+            cursor: unset;
+          }
+          .user-image-and-name {
+            cursor: pointer;
+          }
+        }
+      }
+      .profile {
+        .img-and-name {
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+        p {
+          margin-bottom: 0;
+          font-size: 20px;
+        }
+        .numbers {
+          span {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+    // loader
+    #loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999999999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 6rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    #loader:before,
+    #loader:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      animation: pulsOut 1.8s ease-in-out infinite;
+      filter: drop-shadow(0 0 1rem rgba(169, 169, 169, 0.75));
+    }
+    #loader:before {
+      width: 100%;
+      padding-bottom: 100%;
+      box-shadow: inset 0 0 0 1rem #9b9b9b;
+      animation-name: pulsIn;
+    }
+    #loader:after {
+      width: calc(100% - 2rem);
+      padding-bottom: calc(100% - 2rem);
+      box-shadow: 0 0 0 0 #9b9b9b;
+    }
+
+    @keyframes pulsIn {
+      0% {
+        box-shadow: inset 0 0 0 1rem #9b9b9b;
+        opacity: 1;
+      }
+      50%,
+      100% {
+        box-shadow: inset 0 0 0 0 #9b9b9b;
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulsOut {
+      0%,
+      50% {
+        box-shadow: 0 0 0 0 #9b9b9b;
+        opacity: 0;
+      }
+      100% {
+        box-shadow: 0 0 0 1rem #9b9b9b;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// stlye when theme is Light
+html[data-bs-theme="light"] {
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2.5px 2px rgba(185, 185, 185, 0.5);
+  }
+  // body
+  body {
+    background-color: $bgColorLight;
+    // header
+    header {
+      & > div {
+        h3 {
+          color: $ColorDark;
+        }
+        // nav
+        .nav-masthead .nav-link {
+          color: $ColorDarkNotActive;
+          border-bottom: 0.25rem solid transparent;
+        }
+
+        .nav-masthead .nav-link:hover:not(.active) {
+          border-bottom-color: $ColorDarkNotActive;
+        }
+
+        .nav-masthead .nav-link + .nav-link {
+          margin-left: 1rem;
+        }
+
+        .nav-masthead .active {
+          color: $ColorDark;
+          border-bottom-color: $bgColorDark;
+        }
+        nav {
+          & > div.flex-shrink {
+            // button
+            .my-btn {
+              color: $ColorDark;
+              &:hover {
+                color: $ColorLight;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// stlye when theme is Dark
+html[data-bs-theme="dark"] {
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2.5px 2px rgba(49, 49, 49, 0.7);
+  }
+  body {
+    background-color: $bgColorDark;
+    // header
+    header {
+      div {
+        // nav
+        .nav-masthead .nav-link {
+          color: $ColorLightNotActive;
+          border-bottom: 0.25rem solid transparent;
+        }
+
+        .nav-masthead .nav-link:hover:not(.active) {
+          border-bottom-color: $ColorLightNotActive;
+        }
+
+        .nav-masthead .nav-link + .nav-link {
+          margin-left: 1rem;
+        }
+
+        .nav-masthead .active {
+          color: #fff;
+          border-bottom-color: #fff;
+        }
+        nav {
+          & > div.flex-shrink {
+            // button
+            .my-btn {
+              color: $ColorLight;
+            }
+          }
+        }
+      }
+    }
+  }
+}

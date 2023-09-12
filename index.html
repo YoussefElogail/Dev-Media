@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Social media website,To API experience for front-end developers" />
+    <meta
+      name="author"
+      content="Youssef El-Ogail"
+    />
+    <meta name="generator" content="Hugo 0.115.4" />
+    <title>Dev Media</title>
+    <link rel="shortcut icon" href="./imgs/favicon-ico.png" type="image/x-icon">
+
+
+    <!-- button => (toggle theme) style  -->
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+    <!-- bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+    />
+
+    <!-- bootstrap style -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- main style -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="">
+    <!-- button => (toggle theme) -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        />
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        />
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- contaner of toggle theme BTN & add BTN=>(for user) & go top BTN-->
+    <div
+      class="d-flex align-items-center flex-column position-fixed end-0 bottom-0 z-3 gap-3 mb-4 me-2"
+    >
+      <!-- toggle theme BTN -->
+      <div class="dropdown bd-mode-toggle">
+        <button
+          class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+          id="bd-theme"
+          type="button"
+          aria-expanded="false"
+          data-bs-toggle="dropdown"
+          aria-label="Toggle theme (auto)"
+        >
+          <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul
+          class="dropdown-menu dropdown-menu-end shadow"
+          aria-labelledby="bd-theme-text"
+        >
+          <li>
+            <button
+              type="button"
+              class="dropdown-item d-flex align-items-center"
+              data-bs-theme-value="light"
+              aria-pressed="false"
+            >
+              <svg
+                class="bi me-2 opacity-50 theme-icon"
+                width="1em"
+                height="1em"
+              >
+                <use href="#sun-fill"></use>
+              </svg>
+              Light
+              <svg class="bi ms-auto d-none" width="1em" height="1em">
+                <use href="#check2"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="dropdown-item d-flex align-items-center"
+              data-bs-theme-value="dark"
+              aria-pressed="false"
+            >
+              <svg
+                class="bi me-2 opacity-50 theme-icon"
+                width="1em"
+                height="1em"
+              >
+                <use href="#moon-stars-fill"></use>
+              </svg>
+              Dark
+              <svg class="bi ms-auto d-none" width="1em" height="1em">
+                <use href="#check2"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="dropdown-item d-flex align-items-center active"
+              data-bs-theme-value="auto"
+              aria-pressed="true"
+            >
+              <svg
+                class="bi me-2 opacity-50 theme-icon"
+                width="1em"
+                height="1em"
+              >
+                <use href="#circle-half"></use>
+              </svg>
+              Auto
+              <svg class="bi ms-auto d-none" width="1em" height="1em">
+                <use href="#check2"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!--// toggle theme BTN //-->
+      <!-- add BTN (for user) -->
+      <div id="add-post" class=""></div>
+      <!-- go top BTN -->
+      <button class=" justify-content-center align-items-center btn btn-info position-fixed bottom-0 start-0 mb-4 ms-2" onclick="topFunction()" id="go-to-top" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+        </svg>
+      </button>
+      <!--// go top BTN //-->
+    </div>
+    <!--// contaner of toggle theme BTN & add post BTN=>(for user) & go top BTN //-->
+    
+    <!-- alerts -->
+    <div id="alert-con">
+      <!-- get alerts from javaScrit -->
+    </div>
+    <!--// alerts //-->
+
+    <!-- modals -->
+    <div id="modals-con">
+      <!-- for gest get from jsDOM -->
+      <!-- log-in modal -->
+      <!-- register modal -->
+      <!--// for gest get from jsDOM //-->
+      
+      <!-- for user get from jsDOM -->
+      <!-- create post modal -->
+      <!-- edit post modal -->
+      <!--// edit post modal //-->
+      <!--// for user get from jsDOM //-->
+    </div>
+    <!--// modals //-->
+
+    <!-- loader  -->
+    <span id="loader"></span>
+    <!--// loader //-->
+
+    <!-- header (user name & home & profile & register & log-in) -->
+    <header class="py-2 d-flex flex-column bg-light-subtle rounded-bottom">
+      <div class="container">
+        <nav
+          class="nav nav-masthead w-100 justify-content-between align-items-center flex-md-row flex-column gap-2 gap-md-5"
+        >
+          <div
+            class="d-flex align-items-center gap-3 flex-md-grow-1"
+            id="user-data"
+          ></div>
+          <div class="d-flex">
+            <a
+              class="nav-link fw-bold py-1 px-0 active"
+              aria-current="page"
+              href="/"
+              >Home</a
+            >
+            <a class="nav-link fw-bold py-1 px-0"  onclick="profileClicked()">Profile</a>
+          </div>
+          <!-- container of (login & register & logout) BTN -->
+          <div id="btn-con" class="flex-shrink">
+            <!-- for gest => login BTN & register BTN / fur user logout BTN get from JS DOM (func setupUI) -->
+          </div>
+          <!--// container of (login & register & logout) BTN //-->
+        </nav>
+      </div>
+    </header>
+    <!--// header (user name & home & profile & register & log-in) //-->
+
+    <!-- main (posts) -->
+    <main class="px-3 container my-4">
+      <!-- posts -->
+      
+      <section id="posts" class="col-12 col-md-8 col-lg-5 m-auto">
+        <!-- post (loading)-->
+        <article class="card mb-4 loading">
+          <div class="card-header d-flex align-items-center gap-3">
+            <img
+              src="./imgs/user-img.png"
+              class="rounded-circle border border-2"
+              alt=""
+            />
+            <h4 class="fw-bold"></h4>
+          </div>
+          <div class="img-con">
+            <img
+              loading="lazy"
+              src="./imgs/loding.png"
+              class="card-img-top rounded-0"
+            />
+            <hr class="m-0" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">.....</p>
+            <p class="card-text">
+              <small class="text-body-secondary">Last updated 0 mins ago</small>
+            </p>
+            <hr />
+            <div class="card-comment d-flex gap-3">
+              <i class="bi bi-pen"></i>
+              <h6>(0) comments</h6>
+            </div>
+          </div>
+        </article>
+        <!--// post (loading) //-->
+      </section>
+    </main>
+    <!--// main (posts) //-->
+    <!-- bootstrap toggle theme JS -->
+    <script src="./js/color-mode.js"></script>
+    <!-- bootstrap main JS -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- improt axios API from node modules -->
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="./home.js"></script>
+  </body>
+</html>
