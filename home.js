@@ -37,7 +37,7 @@ const getPosts = (refresh = true) => {
           ("");
         }
         const content = `
-    <article class="card mb-4" >
+  <article class="card mb-4" >
       <div class="card-header d-flex align-items-center justify-content-between gap-3 flex-wrap">
         <div class="d-flex gap-2 align-items-center justify-content-center justify-content-sm-between  flex-wrap user-image-and-name" onclick="userClicked(${post.author.id})">
           <img src=${
@@ -60,7 +60,6 @@ const getPosts = (refresh = true) => {
               : "./imgs/no-image.jpg"} class="card-img-top rounded-0"/>
           <hr class="m-0"/>
         </div>
-      </div>
       <div class="card-body" onclick="postClicked(${post.id})">
         <h5 class="card-title">${post.title == null ? "" : post.title}</h5>
         <p class="card-text">
@@ -84,12 +83,13 @@ const getPosts = (refresh = true) => {
             </h6>
           </div>
           <div id="card-tags-${
-          post.id
+            post.id
           }" class="card-tags d-flex gap-2  flex-wrap">
           </div>
         </div>
       </div>
-    </article>
+    </div>
+  </article>
     `;
         document.getElementById("posts").innerHTML += content;
         // to add tags (arr) to card
