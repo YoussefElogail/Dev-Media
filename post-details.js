@@ -80,7 +80,6 @@ const getPost = () => {
       const comments = post.comments;
       // to add comments to card
       for (comment of comments) {
-        console.log(comment)
         const userComment = `
         <div class="mt-3">
           <div onclick="userClicked(${comment.author.id})" class="name-and-img d-flex align-items-center gap-2">
@@ -100,7 +99,6 @@ const getPost = () => {
     .catch((error) => {
       // use alert func when API is error & refresh the page
       alertFunc("danger", error, 10000);
-      console.log(error)
       setTimeout(() => {
         location.reload();
       }, 10000);
