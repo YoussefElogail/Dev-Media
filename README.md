@@ -1,6 +1,6 @@
  <h1 align="center" >Dev-Media</h1>
   <img src="https://youssef-elogail.firebaseapp.com/imgs/img_site/8.png" />
-  <a href="https://darling-biscochitos-c65205.netlify.app/">Live   
+  <a href="https://dev-mediaa.netlify.app/">Live   
    preview</a>
   <br>
   <h2>Using:</h2>
