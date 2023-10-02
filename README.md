@@ -19,7 +19,7 @@
 
 - Create an account
 - Login
-- Create a post in user status
+- Create a post 
 - Editing the post
 - Delete post
 - Comment on the post
